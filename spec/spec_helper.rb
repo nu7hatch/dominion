@@ -1,6 +1,6 @@
 require 'dominion'
 
-Spec::Runner.configure do |config|  
+RSpec.configure do |config|  
   def running(&block)
     lambda(&block)
   end

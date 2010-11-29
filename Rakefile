@@ -1,11 +1,11 @@
-require 'spec/rake/spectask'
+# -*- ruby -*-
+require 'rspec/core/rake_task'
 
 task :default=>:spec
-task :spec=>['spec:units']
 
-Spec::Rake::SpecTask.new('spec:units') do |t|
-  t.pattern   = ['spec/units/**/*_spec.rb']
-  t.spec_opts = ['--color']
+RSpec::Core::RakeTask.new('spec') do |t|
+  t.pattern    = 'spec/units/**/*_spec.rb'
+  t.rspec_opts = '--color'
 end
 
 task :console do
